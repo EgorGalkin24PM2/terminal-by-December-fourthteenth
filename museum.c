@@ -15,7 +15,7 @@ void load_exhibits(Exhibit **exhibits, int *count, const char *filename) {
     *exhibits = malloc(sizeof(Exhibit) * (*count));
     for (int i = 0; i < *count; i++) {
         fgets((*exhibits)[i].name, sizeof((*exhibits)[i].name), file);
-        (*exhibits)[i].name[strcspn((*exhibits)[i].name, "\n")] = 0; // лишакемся бесконечного потока текста +0
+        (*exhibits)[i].name[strcspn((*exhibits)[i].name, "\n")] = 0; // лишаемся бесконечного потока текста +0
         fscanf(file, "%i\n", &(*exhibits)[i].year);
         fgets((*exhibits)[i].material, sizeof((*exhibits)[i].material), file);
         (*exhibits)[i].material[strcspn((*exhibits)[i].material, "\n")] = 0; // оно же
